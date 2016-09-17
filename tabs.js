@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var dropdown_menu_1 = require('components/dropdown-menu/dropdown-menu');
 var Tab = (function () {
     function Tab() {
         this.active = false;
@@ -98,8 +97,7 @@ var Tabs = (function () {
         core_1.Component({
             selector: 'tabs',
             template: "\n\t\t<ul class=\"nav nav-tabs\">\n\t\t\t<li *ngFor=\"let tab of tabs; let i = index\" (click)=\"selectTab(tab)\" [class.active]=\"tab.active\" [style.min-height.px]=\"minHeight\" class=\"tab\">\n\t\t\t\t{{tab.title}}\n\t\t\t\t<div class=\"dropdown\" *ngIf=\"tab.menu\">\n\t\t\t\t\t<span class=\"caret inline-block\" style=\"margin-top: 60%;\" data-toggle=\"dropdown\"></span>\n\t\t\t\t\t<ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu1\">\n\t\t\t\t\t\t<li><a href=\"#\">New Empty Tab</a></li>\n\t\t\t\t\t\t<li><a href=\"#\">One Column Two Rows</a></li>\n\t\t\t\t\t\t<li *ngFor=\"let menuItem of tab.menu\"><a href=\"#\" (click)=\"addTab(menuItem)\">{{menuItem.tabTitle}}</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t\t<i *ngIf=\"!tab.menu\" class=\"fa fa-times close-tab\" (click)=\"close($event, i)\"></i>\n\t\t\t</li>\n\t\t</ul>\n\t\t<div style=\"height: calc(100% - 30px);\"><ng-content></ng-content></div>\n\t",
-            styles: ["\n\t\tli.tab {\n\t\t\tposition:\t\t\t\t\t\t\trelative;\n\t\t\tdisplay:\t\t\t\t\t\t\tblock;\n\t\t\tpadding:\t\t\t\t\t\t\t5px 10px;\n\t\t\tline-height:\t\t\t\t\t1.428571429;\n\t\t\tborder-radius:\t\t\t\t3px 3px 0 0;\n\t\t\tborder-bottom-color:\ttransparent;\n\t\t\tcursor:\t\t\t\t\t\t\t\tdefault;\n    \tbackground-color:\t\t\trgba(51,51,51,0.4);\n\t\t\tmargin:\t\t\t\t\t\t\t\t0 2px 2px 0;\n\t\t}\n\t\tli.tab:hover {\n\t\t\tbackground-color: #eeeeee;\n\t\t\tborder-color: #eeeeee #eeeeee #ddd;\n\t\t\tcolor: #666;\n\t\t}\n\t\tli.tab.active {\n\t\t\tbottom-border:\t\t2px solid rgba(51,51,51,0.4);\n\t\t\tpadding-bottom:\t\t7px;\n\t\t\tmargin-bottom:\t\t0;\n\t\t}\n\t\t.close-tab {\n\t\t\tcursor:\t\t\t\t\t\tpointer;\n\t\t}\n\t\t.close-tab:hover {\n\t\t\tcolor:\t\t\t\t\t\tblack;\n\t\t}\n\t"],
-            directives: [dropdown_menu_1.Menu]
+            styles: ["\n\t\tli.tab {\n\t\t\tposition:\t\t\t\t\t\t\trelative;\n\t\t\tdisplay:\t\t\t\t\t\t\tblock;\n\t\t\tpadding:\t\t\t\t\t\t\t5px 10px;\n\t\t\tline-height:\t\t\t\t\t1.428571429;\n\t\t\tborder-radius:\t\t\t\t3px 3px 0 0;\n\t\t\tborder-bottom-color:\ttransparent;\n\t\t\tcursor:\t\t\t\t\t\t\t\tdefault;\n    \tbackground-color:\t\t\trgba(51,51,51,0.4);\n\t\t\tmargin:\t\t\t\t\t\t\t\t0 2px 2px 0;\n\t\t}\n\t\tli.tab:hover {\n\t\t\tbackground-color: #eeeeee;\n\t\t\tborder-color: #eeeeee #eeeeee #ddd;\n\t\t\tcolor: #666;\n\t\t}\n\t\tli.tab.active {\n\t\t\tbottom-border:\t\t2px solid rgba(51,51,51,0.4);\n\t\t\tpadding-bottom:\t\t7px;\n\t\t\tmargin-bottom:\t\t0;\n\t\t}\n\t\t.close-tab {\n\t\t\tcursor:\t\t\t\t\t\tpointer;\n\t\t}\n\t\t.close-tab:hover {\n\t\t\tcolor:\t\t\t\t\t\tblack;\n\t\t}\n\t"]
         }), 
         __metadata('design:paramtypes', [core_1.ChangeDetectorRef])
     ], Tabs);

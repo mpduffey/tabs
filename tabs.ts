@@ -1,5 +1,4 @@
 import {Component, Input, ContentChildren, QueryList, AfterViewInit, ChangeDetectionStrategy, EventEmitter, Output, ChangeDetectorRef} from '@angular/core';
-import {Menu} from 'components/dropdown-menu/dropdown-menu';
 
 @Component({
 	selector: 				'tab',
@@ -76,8 +75,7 @@ export class Tab {
 		.close-tab:hover {
 			color:						black;
 		}
-	`],
-	directives:				[Menu]
+	`]
 })
 export class Tabs implements AfterViewInit {
 	@ContentChildren(Tab) tabs: QueryList<Tab>;
